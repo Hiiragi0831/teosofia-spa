@@ -2,3 +2,22 @@
 // @include font-face("FontName", 500);
 // italic fonts
 // @include font-face("FontName", 500, italic);
+
+@include font-face("Montserrat", 100);
+@include font-face("Montserrat", 200);
+@include font-face("Montserrat", 300);
+@include font-face("Montserrat", 400);
+@include font-face("Montserrat", 500);
+@include font-face("Montserrat", 600);
+@include font-face("Montserrat", 700);
+@include font-face("Montserrat", 800);
+@include font-face("Montserrat", 900);
+@include font-face("Montserrat", 100, italic);
+@include font-face("Montserrat", 200, italic);
+@include font-face("Montserrat", 300, italic);
+@include font-face("Montserrat", 400, italic);
+@include font-face("Montserrat", 500, italic);
+@include font-face("Montserrat", 600, italic);
+@include font-face("Montserrat", 700, italic);
+@include font-face("Montserrat", 800, italic);
+@include font-face("Montserrat", 900, italic);
