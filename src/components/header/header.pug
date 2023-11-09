@@ -3,16 +3,25 @@ header.header
 		.row
 			.header__logo
 				p Logo
-			.header__menu
-				.header__menu-link
-					a(href="#") Link
-					.header__menu-dropdown
-						.header__menu-link
-							a(href="#") Link
-							.header__menu-dropdown
-								.header__menu-link
-									a(href="#") Link
-				.header__menu-link
-					a(href="#") Link
+			ul.header__menu
+				li
+					a(href="#") Link 1
+					ul.header__menu-dropdown
+						li
+							a(href="#") Link 2
+							ul.header__menu-dropdown
+								li
+									a(href="#") Link 3
+								li
+									a(href="#") Link 3
+									ul.header__menu-dropdown
+										li
+											a(href="#") Link 4
+										li
+											a(href="#") Link 4
+						li
+							a(href="#") Link 2
+				li
+					a(href="#") Link 1
 			.header__contact
 				a(href="#") +79922344332

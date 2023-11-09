@@ -3,12 +3,13 @@
 	left: vc(10);
 	top: vc(10);
 	border: 1px solid $gallery-100;
-	border-radius: vc(24);
+	border-radius: vc(16);
 	padding: vc(15);
 	width: calc(100% - #{vc(20)});
 
 	.row {
 		display: flex;
+		align-items: center;
 		justify-content: space-between;
 	}
 
@@ -16,22 +17,71 @@
 		display: flex;
 		gap: vc(15);
 
-		&-dropdown {
-			position: absolute;
-			top: 0;
-			padding-top: vc(24);
-			opacity: 0;
-			visibility: hidden;
-		}
-
-		&-link {
+		li {
 			position: relative;
+			display: flex;
+			align-items: center;
+			border-radius: vc(8);
+			padding: vc(6) vc(12);
+			transition: background-color $transition;
+			gap: vc(5);
+
+			a {
+				display: block;
+			}
+
+			&:has(.header__menu-dropdown) {
+				&::after {
+					content: '';
+					position: relative;
+					display: flex;
+					width: vc(10);
+					height: vc(10);
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z'/%3E%3C/svg%3E%0A");
+					background-position: center;
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
+			}
 
 			&:hover {
-				.header__menu-dropdown {
-					opacity: 1;
-					visibility: visible;
+				background-color: $gallery-100;
+			}
+		}
+
+		&-dropdown {
+			position: absolute;
+			left: 0;
+			top: 100%;
+			border-radius: vc(16);
+			padding: vc(10);
+			width: vc(150);
+			box-shadow: $box-shadow;
+			background-color: $color-white;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity $transition, visibility $transition;
+
+			.header__menu-dropdown {
+				left: 100%;
+				top: 0;
+			}
+
+			li {
+				&:has(.header__menu-dropdown) {
+					&::after {
+						background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M305 239c9.4 9.4 9.4 24.6 0 33.9L113 465c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l175-175L79 81c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L305 239z'/%3E%3C/svg%3E");
+					}
 				}
+
+				&:hover {
+					background-color: $tulip-tree-200;
+				}
+			}
+
+			li:hover > & {
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 	}
