@@ -1,3 +1,38 @@
 .header {
+	position: fixed;
+	left: vc(10);
+	top: vc(10);
+	border: 1px solid $gallery-100;
+	border-radius: vc(24);
+	padding: vc(15);
+	width: calc(100% - #{vc(20)});
 
+	.row {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__menu {
+		display: flex;
+		gap: vc(15);
+
+		&-dropdown {
+			position: absolute;
+			top: 0;
+			padding-top: vc(24);
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		&-link {
+			position: relative;
+
+			&:hover {
+				.header__menu-dropdown {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
 }
