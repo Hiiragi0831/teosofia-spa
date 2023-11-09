@@ -21,13 +21,15 @@
 			position: relative;
 			display: flex;
 			align-items: center;
-			border-radius: vc(8);
-			padding: vc(6) vc(12);
-			transition: background-color $transition;
 			gap: vc(5);
 
 			a {
 				display: block;
+				overflow: hidden;
+				border-radius: vc(8);
+				padding: vc(6) vc(12);
+				width: 100%;
+				transition: background-color $transition;
 			}
 
 			&:has(.header__menu-dropdown) {
@@ -45,7 +47,9 @@
 			}
 
 			&:hover {
-				background-color: $gallery-100;
+				> a {
+					background-color: $gallery-100;
+				}
 			}
 		}
 
@@ -53,14 +57,17 @@
 			position: absolute;
 			left: 0;
 			top: 100%;
+			display: flex;
+			flex-direction: column;
 			border-radius: vc(16);
 			padding: vc(10);
-			width: vc(150);
+			min-width: vc(220);
 			box-shadow: $box-shadow;
 			background-color: $color-white;
 			opacity: 0;
 			visibility: hidden;
 			transition: opacity $transition, visibility $transition;
+			gap: vc(10);
 
 			.header__menu-dropdown {
 				left: 100%;
@@ -75,7 +82,9 @@
 				}
 
 				&:hover {
-					background-color: $tulip-tree-200;
+					> a {
+						background-color: $tulip-tree-200;
+					}
 				}
 			}
 

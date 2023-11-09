@@ -1,27 +1,22 @@
+- const header = require('data.js').default;
 header.header
 	.container
 		.row
 			.header__logo
 				p Logo
 			ul.header__menu
-				li
-					a(href="#") Link 1
-					ul.header__menu-dropdown
-						li
-							a(href="#") Link 2
+				each item in header
+					li
+						a(href="#")!= item.link
+						if item.dropdown
 							ul.header__menu-dropdown
-								li
-									a(href="#") Link 3
-								li
-									a(href="#") Link 3
-									ul.header__menu-dropdown
-										li
-											a(href="#") Link 4
-										li
-											a(href="#") Link 4
-						li
-							a(href="#") Link 2
-				li
-					a(href="#") Link 1
+								each drop in item.dropdown
+									li
+										a(href="#")!= drop.link
+										if drop.dropdown
+											ul.header__menu-dropdown
+												each i in drop.dropdown
+													li
+														a(href="#")!= i.link
 			.header__contact
 				a(href="#") +79922344332
