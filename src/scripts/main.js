@@ -1,6 +1,7 @@
 import debounce from 'lodash.debounce';
 import throttle from 'lodash.throttle';
 
+import 'swiper/swiper-bundle.css';
 import '@styles/vendor.scss';
 import '@styles/main.scss';
 

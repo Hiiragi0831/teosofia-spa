@@ -1,16 +1,18 @@
 .header {
 	position: fixed;
-	left: vc(10);
+	left: 0;
 	top: vc(10);
-	border: 1px solid $gallery-100;
-	border-radius: vc(16);
-	padding: vc(15);
-	width: calc(100% - #{vc(20)});
+	width: 100%;
+	color: $color-black;
 
 	.row {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		border: 1px solid $gallery-100;
+		border-radius: vc(16);
+		padding: vc(15);
+		background-color: $color-white;
 	}
 
 	&__menu {
@@ -19,36 +21,36 @@
 
 		li {
 			position: relative;
-			display: flex;
-			align-items: center;
-			gap: vc(5);
 
 			a {
-				display: block;
+				display: flex;
+				align-items: center;
 				overflow: hidden;
 				border-radius: vc(8);
 				padding: vc(6) vc(12);
 				width: 100%;
 				transition: background-color $transition;
+				gap: vc(15);
 			}
 
 			&:has(.header__menu-dropdown) {
-				&::after {
+				> a::after {
 					content: '';
 					position: relative;
 					display: flex;
+					mask-image: url("assets/svg-sprites/chevron-down.svg");
+					mask-position: center;
+					mask-repeat: no-repeat;
+					mask-size: contain;
 					width: vc(10);
 					height: vc(10);
-					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z'/%3E%3C/svg%3E%0A");
-					background-position: center;
-					background-size: contain;
-					background-repeat: no-repeat;
+					background-color: $color-black;
 				}
 			}
 
 			&:hover {
 				> a {
-					background-color: $gallery-100;
+					background-color: $tulip-tree-200;
 				}
 			}
 		}
@@ -63,6 +65,7 @@
 			padding: vc(10);
 			min-width: vc(220);
 			box-shadow: $box-shadow;
+			color: $color-black;
 			background-color: $color-white;
 			opacity: 0;
 			visibility: hidden;
@@ -76,8 +79,8 @@
 
 			li {
 				&:has(.header__menu-dropdown) {
-					&::after {
-						background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath d='M305 239c9.4 9.4 9.4 24.6 0 33.9L113 465c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l175-175L79 81c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L305 239z'/%3E%3C/svg%3E");
+					> a::after {
+						mask-image: url("assets/svg-sprites/chevron-right.svg");
 					}
 				}
 
@@ -92,6 +95,20 @@
 				opacity: 1;
 				visibility: visible;
 			}
+		}
+	}
+
+	&__end {
+		display: flex;
+		gap: vc(15);
+	}
+
+	&__search {
+		width: vc(20);
+		height: vc(20);
+
+		svg {
+			fill: $color-black;
 		}
 	}
 }

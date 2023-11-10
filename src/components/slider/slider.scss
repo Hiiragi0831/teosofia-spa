@@ -1,0 +1,24 @@
+.slider {
+	.swiper {
+		width: 100%;
+		height: vc(600);
+
+		&-slide {
+			picture {
+				overflow: hidden;
+				border-radius: vc(16);
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&-pagination {
+			left: auto;
+			right: vc(30);
+			width: auto;
+			font-weight: 600;
+			font-size: vc(22);
+			color: $color-white;
+		}
+	}
+}

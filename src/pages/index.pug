@@ -9,4 +9,21 @@ block content
 	.site
 		include @components/header/header
 		main.home
+			section.slider
+				.container
+					.swiper
+						.swiper-wrapper
+							a.swiper-slide(href="#")
+								+picture({
+									path: `${baseDir}assets/images/home/slide-2`,
+									ext: 'jpg',
+								})
+							a.swiper-slide(href="#")
+								+picture({
+									path: `${baseDir}assets/images/home/slide-1`,
+									ext: 'jpg',
+								})
+						.swiper-pagination
+
+
 		include @components/footer/footer
